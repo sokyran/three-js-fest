@@ -5,7 +5,12 @@ import { gsap } from "gsap";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
 
-
+window.addEventListener( 'resize', onWindowResize, false );
+function onWindowResize(){
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+}
 
 
 
@@ -144,7 +149,7 @@ function animate() {
 	requestAnimationFrame(animate);
 	renderer.render(scene, camera);
 
-  camera.position.y += 0.001
+  // camera.position.y += 0.001
 
   if (headModel) {
     headModel.rotation.x = cursor.y * 2.2
