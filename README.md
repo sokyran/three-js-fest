@@ -1,6 +1,6 @@
 # Three.js FEST Repo
 
-Don't forget to `npm i`
+Don't forget to `yarn`
 
 Then just go `yarn start`
 
